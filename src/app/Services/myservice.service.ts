@@ -37,9 +37,6 @@ export class MyserviceService {
       const repoData = repoResponse.data;
       const profileData = myResponse.data;
 
-
-      console.log(repoData)
-
       //Profile Details
       this.myDetails.bioMessage = profileData.bio;
       this.myDetails.userName = profileData.login;
@@ -53,18 +50,21 @@ export class MyserviceService {
 
         if (!element.language || !element.description) {
           element.language = "Custom";
-          element.description = "No description";
+          element.description = "Custom";
         }
 
-        this.reposArray.push(element.forks,
+        this.reposArray.push( new Repos(
+          element.forks,
           element.html_url,
           element.language,
           element.name,
           element.created_at,
           element.updated_at,
           element.description
-        )
+        ) )
       });
+
+      console.log(this.reposArray)
 
     } catch (error) {
       alert(error);

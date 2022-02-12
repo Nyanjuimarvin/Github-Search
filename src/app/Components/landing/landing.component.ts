@@ -18,8 +18,9 @@ export class LandingComponent implements OnInit {
   ngOnInit(): void {
 
     this.myService.getMyUserDetails();
-    this.myAccount = this.myService.myDetails;
     this.myRepos = this.myService.reposArray;
+    this.myAccount = this.myService.myDetails;
+    
   }
 
 }

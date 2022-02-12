@@ -3,11 +3,11 @@
     <div class="col-md-4"></div>
     <div class="col-md-4">
       <div class="card profile mx-auto mt-5">
-        <div class="profileimg mx-auto mb-2 mt-3 p-1"> <img class="img-fluid " src ={{myAccount.photoUrl}} alt=""></div>
+        <div class="profileimg mx-auto mb-2 mt-3 p-1"> <img class="img-fluid " src={{myAccount.photoUrl}} alt=""></div>
         <div class="card-body">
           <h3 class="card-title text-center mb-2">{{myAccount.userName}}</h3>
           <h5 class="card-text text-center">{{myAccount.bioMessage}}</h5>
-          <p class="card-text text-center">Joined  {{myAccount.dateJoined}}</p>
+          <p class="card-text text-center">Joined {{myAccount.dateJoined}}</p>
           <div class="text-center mb-5">
             <i class="fas fa-book me-2"></i>
             <span class="me-5">{{myAccount.repoNumber}}</span>
@@ -15,12 +15,31 @@
             <span>0</span>
           </div>
 
-          <button class="profilebtn btn btn-outline-light d-block mx-auto"><a href={{myAccount.userUrl}} target="_blank"><i
-                class="fab fa-github text-black"></i></a></button>
+          <button class="profilebtn btn btn-outline-light d-block mx-auto"><a href={{myAccount.userUrl}}
+              target="_blank"><i class="fab fa-github text-black"></i></a></button>
 
         </div>
       </div>
     </div>
     <div class="col-md-4"></div>
+  </div>
+  <h3 class="text-center">Repositories</h3>
+  <div class="row row-cols-1 row-cols-md-2 g-3">
+    <ng-container *ngFor="let repo of myRepos">
+      <div class="col">
+
+        <div class="card text-center">
+          <h3>{{repo.repoName}}</h3>
+          <h6>Description:{{repo.repoDescription}}</h6>
+          <p>Language:{{repo.language}}</p>
+          <p>Forks:{{repo.forks}}</p>
+          <p>Created:{{repo.dateCreated}}</p>
+          <p>Last Updated:{{repo.lastUpdated}}</p>
+          <a href={{repo.repoUrl}}>View in Github</a>
+
+        </div>
+
+      </div>
+    </ng-container>
   </div>
 </div>
