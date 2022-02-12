@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MyserviceService } from 'src/app/Services/myservice.service';
+import { User } from 'src/app/Classes/user';
 
 @Component({
   selector: 'app-landing',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
+  myAccount!:User
+
+  constructor(private myService:MyserviceService) { }
 
   ngOnInit(): void {
+
+    this.myService.getMyDetails();
+    this.myAccount = this.myService.myDetails;
   }
 
 }
