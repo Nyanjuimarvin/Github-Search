@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MyserviceService } from 'src/app/Services/myservice.service';
 import { User } from 'src/app/Classes/user';
+import { Repos } from 'src/app/Classes/repos';
 
 @Component({
   selector: 'app-landing',
@@ -9,7 +10,8 @@ import { User } from 'src/app/Classes/user';
 })
 export class LandingComponent implements OnInit {
 
-  myAccount!:User
+  myAccount!:User;
+  myRepos:Repos[] = [];
 
   constructor(private myService:MyserviceService) { }
 
@@ -17,6 +19,7 @@ export class LandingComponent implements OnInit {
 
     this.myService.getMyUserDetails();
     this.myAccount = this.myService.myDetails;
+    this.myRepos = this.myService.reposArray;
   }
 
 }
