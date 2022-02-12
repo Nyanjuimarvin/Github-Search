@@ -11,10 +11,10 @@ export class MyserviceService {
   myDetails!: User;
 
   constructor() {
-    this.myDetails = new User("", "", 0);
+    this.myDetails = new User("","","", "", 0);
   }
 
-  async getMyDetails() {
+  async getMyUserDetails() {
 
     try {
       const myResponse = await axios.get(`https://api.github.com/users/Nyanjuimarvin`,
@@ -26,10 +26,14 @@ export class MyserviceService {
       this.myDetails.userName = myResponse.data.login;
       this.myDetails.photoUrl = myResponse.data.avatar_url;
       this.myDetails.repoNumber = myResponse.data.public_repos;
-
+      this.myDetails.dateJoined = myResponse.data.created_at;
+      this.myDetails.repoUrl = myResponse.data.html_url;
+      this.myDetails.bioMessage = myResponse.data.bio;
 
     } catch (error) {
       alert(error);
     }
   }
+
+
 }
