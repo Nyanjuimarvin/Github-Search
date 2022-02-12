@@ -1,0 +1,19 @@
+.profile{
+    background-color: mintcream;
+}
+
+.profileimg{
+    border-radius: 50%;
+    border: 1px solid;
+}
+
+.profileimg img{
+    width: 120px;
+    height: 120px;
+    border: 1px solid;
+    border-radius: 50%;
+    outline: 2px;
+}
+.profilebtn{
+    width: 100px;
+}
