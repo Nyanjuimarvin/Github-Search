@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from '../Classes/user';
 import { Repos } from '../Classes/repos';
-import { Query } from '../Classes/query';
 import axios from 'axios';
 import { environment } from 'src/environments/environment';
 
@@ -14,36 +13,36 @@ export class UserserviceService {
   userDetails!: User;
   userRepos!: Repos;
   userReposArray: Repos[] = [];
-  searchReposArray:Repos[] = [];
-  query!:Query;
-
+  searchReposArray: Repos[] = [];
+ 
   constructor() {
     this.userDetails = new User();
     this.userRepos = new Repos();
-    this.query = new Query();
 
   }
 
-  async getMyUserDetails() {
+  async getUserDetails(urQuery:any) {
 
     try {
 
-      const myResponse = await axios.get(`https://api.github.com/users/${this.query.userQuery}`,
+      const myResponse = await axios.get(`https://api.github.com/users/${urQuery}`,
         {
           headers:
             { "Authorization": environment.access_token }
         })
 
-      const userRepoResponse = await axios.get(`https://api.github.com/users/${this.query.userQuery}/repos`);
+      const userRepoResponse = await axios.get(`https://api.github.com/users/${urQuery}/repos`);
 
-      const repositories = await axios.get(`https://api.github.com/search/repositories?q=${this.query.userQuery}}`)
-     
+      const repositories = await axios.get(`https://api.github.com/search/repositories?q=${urQuery}}`)
+
       const profileData = myResponse.data;
       const repoData = userRepoResponse.data;
       const repoResultsArray = repositories.data.items;
 
+      console.log(repoResultsArray)
+
       //Profile Details
-      if(!this.userDetails.bioMessage) this.userDetails.bioMessage = "Custom";
+      if (!this.userDetails.bioMessage) this.userDetails.bioMessage = "Custom";
 
       this.userDetails.bioMessage = profileData.bio;
       this.userDetails.userName = profileData.login;

@@ -1,3 +1,3 @@
 export class Query {
-    constructor(public userQuery?:string){}
+    constructor(public userQuery:string){}
 }

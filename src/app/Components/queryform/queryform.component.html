@@ -1,13 +1,10 @@
-<div class="container-fluid">
-  <div class="row">
+<div class="row mt-4">
 
-    <form #queryForm='ngForm' action="">
-      <div class="input-group">
-        <input class="form-control" type="text" name='Query' id="" placeholder=" Search Gifs...">
-        <button class="btn btn-outline-success d-block"><i class="fa fa-search" aria-hidden="true"></i></button>
-      </div>
+  <form #queryForm='ngForm' (ngSubmit)="queryResult()" action="">
+    <div class="input-group">
+      <input class="form-control" type="text" name='Query' [(ngModel)]="searchQuery.userQuery" #Query = "ngModel" id="" placeholder=" Search User or Repository...">
+      <button class="btn btn-outline-success d-block"><i class="fa fa-search" aria-hidden="true"></i></button>
+    </div>
 
-
-    </form>
-  </div>
+  </form>
 </div>
