@@ -14,6 +14,7 @@ export class UserserviceService {
   userDetails!: User;
   userRepos!: Repos;
   userReposArray: Repos[] = [];
+  searchReposArray:Repos[] = [];
   query!:Query;
 
   constructor() {
@@ -33,10 +34,13 @@ export class UserserviceService {
             { "Authorization": environment.access_token }
         })
 
-      const repoResponse = await axios.get(`https://api.github.com/users/${this.query.userQuery}/repos`);
+      const userRepoResponse = await axios.get(`https://api.github.com/users/${this.query.userQuery}/repos`);
 
-      const repoData = repoResponse.data;
+      const repositories = await axios.get(`https://api.github.com/search/repositories?q=${this.query.userQuery}}`)
+     
       const profileData = myResponse.data;
+      const repoData = userRepoResponse.data;
+      const repoResultsArray = repositories.data.items;
 
       //Profile Details
       if(!this.userDetails.bioMessage) this.userDetails.bioMessage = "Custom";
@@ -57,6 +61,25 @@ export class UserserviceService {
         }
 
         this.userReposArray.push(new Repos(
+          element.forks,
+          element.html_url,
+          element.language,
+          element.name,
+          element.created_at,
+          element.updated_at,
+          element.description
+        ))
+      });
+
+      //Repositories search results
+      repoResultsArray.forEach((element: any) => {
+
+        if (!element.language || !element.description) {
+          element.language = "Custom";
+          element.description = "Custom";
+        }
+
+        this.searchReposArray.push(new Repos(
           element.forks,
           element.html_url,
           element.language,

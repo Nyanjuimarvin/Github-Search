@@ -29,7 +29,7 @@ export class MyserviceService {
         })
 
       const repoResponse = await axios.get(`https://api.github.com/users/Nyanjuimarvin/repos`);
-
+      
       const repoData = repoResponse.data;
       const profileData = myResponse.data;
 
@@ -59,8 +59,6 @@ export class MyserviceService {
           element.description
         ))
       });
-
-      console.log(this.reposArray)
 
     } catch (error) {
       alert(error);
