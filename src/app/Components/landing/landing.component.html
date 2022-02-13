@@ -2,12 +2,12 @@
   <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4">
-      <div class="card profile mx-auto mt-5">
+      <div class="card profile mx-auto mt-5 mb-4">
         <div class="profileimg mx-auto mb-2 mt-3 p-1"> <img class="img-fluid " src={{myAccount.photoUrl}} alt=""></div>
         <div class="card-body">
-          <h3 class="card-title text-center mb-2">{{myAccount.userName}}</h3>
-          <h5 class="card-text text-center">{{myAccount.bioMessage}}</h5>
-          <p class="card-text text-center">Joined {{myAccount.dateJoined}}</p>
+          <h3 class="card-title text-center mb-2 fw-bold">{{myAccount.userName}}</h3>
+          <h5 class="card-text text-center fs-4">{{myAccount.bioMessage}}</h5>
+          <p class="card-text text-center">Joined {{myAccount.dateJoined | date}}</p>
           <div class="text-center mb-5">
             <i class="fas fa-book me-2"></i>
             <span class="me-5">{{myAccount.repoNumber}}</span>
@@ -23,19 +23,19 @@
     </div>
     <div class="col-md-4"></div>
   </div>
-  <h3 class="text-center">Repositories</h3>
+  <h3 class="text-center fw-bolder fs-1">Repositories</h3>
   <div class="row row-cols-1 row-cols-md-3 g-3">
     <ng-container *ngFor="let repo of myRepos">
       <div class="col">
 
-        <div class="card h-100">
-          <h3 class="text-center">{{repo.repoName}}</h3>
-          <h6 class="text-start">Description:{{repo.repoDescription}}</h6>
-          <p class="text-start ms-4">Language:{{repo.language}}</p>
-          <p class="text-start">Forks:{{repo.forks}}</p>
-          <p class="text-start">Created:{{ repo.dateCreated | date }}</p>
-          <p class="text-start">Last Updated:{{ repo.lastUpdated | update }}</p>
-          <a href={{repo.repoUrl}} target="_blank">View in Github</a>
+        <div class="card h-100 repo">
+          <h3 class="text-center fw-bold text-white">{{repo.repoName}}</h3>
+          <h6 class="text-star ms-4 me-4">Description:{{repo.repoDescription}}</h6>
+          <p class="text-start ms-4 me-4">Language:{{repo.language}}</p>
+          <p class="text-start text-black ms-4 me-4">Forks:{{repo.forks}}</p>
+          <p class="text-start ms-4 me-4">Created:{{ repo.dateCreated | date }}</p>
+          <p class="text-start ms-4 me-4">Last Updated:{{ repo.lastUpdated | update }}</p>
+          <a href={{repo.repoUrl}} target="_blank" class="ms-4 fs-6">View in Github</a>
 
         </div>
 

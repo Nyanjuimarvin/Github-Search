@@ -1,2 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
+@font-face {
+  font-family: "ITC Goudy Sans LT";
+  src: url("//db.onlinewebfonts.com/t/c7e7deb0b79db60b0415420f53de7d97.eot");
+  src: url("//db.onlinewebfonts.com/t/c7e7deb0b79db60b0415420f53de7d97.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/c7e7deb0b79db60b0415420f53de7d97.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/c7e7deb0b79db60b0415420f53de7d97.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/c7e7deb0b79db60b0415420f53de7d97.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/c7e7deb0b79db60b0415420f53de7d97.svg#ITC Goudy Sans LT")
+      format("svg");
+}
+
+*{
+    font-family: "ITC Goudy Sans LT";
+    font-size: 20px;
+
+}
+body{
+  background-image: url(./assets/Ngaruroro.png);
+  background-attachment: fixed;
+}
