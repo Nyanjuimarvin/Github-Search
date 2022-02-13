@@ -1,49 +1,53 @@
 <div class="container-fluid">
 
   <app-queryform (query)="searchTerm($event)"></app-queryform>
-  <div class="row">
+  <ng-container>
 
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-      <h3 class="text-center mt-4">Users</h3>
-      <div class="card profile mx-auto mt-5">
-        <div class="profileimg mx-auto mb-2 mt-3 p-1"> <img class="img-fluid " src="" alt=""></div>
-        <div class="card-body">
-          <h3 class="card-title text-center mb-2"></h3>
-          <h5 class="card-text text-center"></h5>
-          <p class="card-text text-center"></p>
-          <div class="text-center mb-5">
-            <i class="fas fa-book me-2"></i>
-            <span class="me-5"></span>
-            <i class="far fa-star me-2"></i>
-            <span>0</span>
+    <div class="row">
+
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <h3 class="text-center mt-4">Users</h3>
+        <div class="card profile mx-auto mt-5" #userResponse>
+          <div class="profileimg mx-auto mb-2 mt-3 p-1"> <img class="img-fluid " src={{userAccount.photoUrl}} alt="">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title text-center mb-2">{{userAccount.userName}}</h3>
+            <h5 class="card-text text-center">{{userAccount.bioMessage}}</h5>
+            <p class="card-text text-center">{{userAccount.dateJoined}}</p>
+            <div class="text-center mb-5">
+              <i class="fas fa-book me-2"></i>
+              <span class="me-5">{{userAccount.repoNumber}}</span>
+              <i class="far fa-star me-2"></i>
+              <span>0</span>
+            </div>
+
+            <button class="profilebtn btn btn-outline-light d-block mx-auto"><a href={{userAccount.userUrl}}
+                target="_blank"><i class="fab fa-github text-black"></i></a></button>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+    <h3 class="text-center">Repositories</h3>
+    <div class="row row-cols-1 row-cols-md-3 g-3">
+      <ng-container *ngFor="let repo of userProjects">
+        <div class="col" #repoResponse>
+
+          <div class="card h-100">
+            <h3 class="text-center">{{repo.repoName}}</h3>
+            <h6 class="text-start">{{repo.repoDescription}}</h6>
+            <p class="text-start ms-4">{{repo.language}}</p>
+            <p class="text-start">{{repo.forks}}</p>
+            <p class="text-start">{{repo.dateCreated}}</p>
+            <p class="text-start">{{repo.lastUpdated}}</p>
+            <a href={{repo.repoUrl}}>View in Github</a>
+
           </div>
 
-          <button class="profilebtn btn btn-outline-light d-block mx-auto"><a href="" target="_blank"><i
-                class="fab fa-github text-black"></i></a></button>
-
         </div>
-      </div>
+      </ng-container>
     </div>
-    <div class="col-md-4"></div>
-  </div>
-  <h3 class="text-center">Repositories</h3>
-  <div class="row row-cols-1 row-cols-md-3 g-3">
-    <ng-container *ngFor="let repo of queryRepo">
-      <div class="col">
-
-        <div class="card h-100">
-          <h3 class="text-center">{{repo.repoName}}</h3>
-          <h6 class="text-start">{{repo.repoDescription}}</h6>
-          <p class="text-start ms-4">{{repo.language}}</p>
-          <p class="text-start">{{repo.forks}}</p>
-          <p class="text-start">{{repo.dateCreated}}</p>
-          <p class="text-start">{{repo.lastUpdated}}</p>
-          <a href={{repo.repoUrl}}>View in Github</a>
-
-        </div>
-
-      </div>
-    </ng-container>
-  </div>
+  </ng-container>
 </div>

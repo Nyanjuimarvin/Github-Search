@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <app-repoform (repoQuery)="getRandRepos($event)"></app-repoform>
+
+  <div class="row row-cols-1 row-cols-md-3 g-3">
+    <ng-container *ngFor="let repo of reposArray">
+      <div class="col" #repoResponse>
+
+        <div class="card h-100">
+          <h3 class="text-center">{{repo.repoName}}</h3>
+          <h6 class="text-start">{{repo.repoDescription}}</h6>
+          <p class="text-start ms-4">{{repo.language}}</p>
+          <p class="text-start">{{repo.forks}}</p>
+          <p class="text-start">{{repo.dateCreated}}</p>
+          <p class="text-start">{{repo.lastUpdated}}</p>
+          <a href={{repo.repoUrl}}>View in Github</a>
+
+        </div>
+
+      </div>
+    </ng-container>
+  </div>
+
+</div>

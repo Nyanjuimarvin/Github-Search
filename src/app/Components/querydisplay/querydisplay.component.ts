@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Repos } from 'src/app/Classes/repos';
 import { User } from 'src/app/Classes/user';
 import { Query } from 'src/app/Classes/query';
@@ -13,6 +13,10 @@ import { UserserviceService } from 'src/app/Services/userservice.service';
 
 export class QuerydisplayComponent implements OnInit {
 
+
+  @ViewChild("repoResponse")repoResponse!:HTMLDivElement;
+  @ViewChild("userResponse")userResponse!:HTMLDivElement;
+
   userAccount!: User;
   userRepos!: Repos;
   userProjects: Repos[] = [];
@@ -20,6 +24,7 @@ export class QuerydisplayComponent implements OnInit {
   newQuery!: Query;
 
   searchTerm(query: any) {
+    
     this.newQuery = query;
     this.userService.getUserDetails(this.newQuery.userQuery)
     this.userAccount = this.userService.userDetails;

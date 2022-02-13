@@ -8,7 +8,8 @@ import { LandingComponent } from './Components/landing/landing.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { QueryformComponent } from './Components/queryform/queryform.component';
 import { QuerydisplayComponent } from './Components/querydisplay/querydisplay.component';
-import { UserrepodisplayComponent } from './Components/userrepodisplay/userrepodisplay.component';
+import { ReposearchComponent } from './Components/reposearch/reposearch.component';
+import { RepoformComponent } from './Components/repoform/repoform.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { UserrepodisplayComponent } from './Components/userrepodisplay/userrepod
     NavbarComponent,
     QueryformComponent,
     QuerydisplayComponent,
-    UserrepodisplayComponent
+    ReposearchComponent,
+    RepoformComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserrepodisplayComponent } from './userrepodisplay.component';
+import { RepoformComponent } from './repoform.component';
 
-describe('UserrepodisplayComponent', () => {
-  let component: UserrepodisplayComponent;
-  let fixture: ComponentFixture<UserrepodisplayComponent>;
+describe('RepoformComponent', () => {
+  let component: RepoformComponent;
+  let fixture: ComponentFixture<RepoformComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserrepodisplayComponent ]
+      declarations: [ RepoformComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserrepodisplayComponent);
+    fixture = TestBed.createComponent(RepoformComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

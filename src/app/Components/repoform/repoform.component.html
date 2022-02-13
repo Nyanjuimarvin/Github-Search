@@ -1,0 +1,10 @@
+<div class="row mt-4">
+
+    <form #queryForm='ngForm' (ngSubmit)="repoRequest()" action="">
+      <div class="input-group">
+        <input class="form-control" type="text" name='repoQuery' [(ngModel)]="repoSearch.userQuery" #repoQuery = "ngModel" id="" placeholder=" Search Repository...">
+        <button class="btn btn-outline-success d-block"><i class="fa fa-search" aria-hidden="true"></i></button>
+      </div>
+  
+    </form>
+  </div>
