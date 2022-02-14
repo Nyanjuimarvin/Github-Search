@@ -22,16 +22,15 @@ export class QuerydisplayComponent implements OnInit {
   userProjects: Repos[] = [];
   queryRepo: Repos[] = [];
   newQuery!: Query;
-  isLoaded:boolean = false;
 
-  searchTerm(query: any) {
-    
+
+  searchTerm(query: Query) {
+
+    this.userProjects.splice(0,this.userProjects.length);
     this.newQuery = query;
     this.userService.getUserDetails(this.newQuery)
     this.userAccount = this.userService.userDetails;
     this.userProjects = this.userService.userReposArray;
-    this.queryRepo = this.userService.searchReposArray;
-    console.log(this.queryRepo)
     
   }
 
