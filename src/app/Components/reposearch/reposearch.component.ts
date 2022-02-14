@@ -17,7 +17,7 @@ export class ReposearchComponent implements OnInit {
   getRandRepos(randRepo:any){
 
     this.repoQuery = randRepo;
-    this.repoService.getUserDetails(this.repoQuery.userQuery)
+    this.repoService.getUserDetails(this.repoQuery)
     this.reposArray = this.repoService.searchReposArray;
 
   }

@@ -1,3 +1,10 @@
 .repo{
     background-color: #5cebc0;
 }
+.head{
+    background-color: rgba(0, 0, 0, 0.192);
+}
+
+.foot:hover{
+    background-color: rgb(153, 240, 66);
+}

@@ -11,9 +11,9 @@ export class QueryformComponent implements OnInit {
   @Output() query = new EventEmitter<any>();
   searchQuery = new Query("");
 
-  queryResult(){
-    this.query.emit(this.searchQuery);
-    this.searchQuery = new Query("");
+  queryResult() {
+      this.query.emit(this.searchQuery);
+      this.searchQuery = new Query("");
 
   }
 

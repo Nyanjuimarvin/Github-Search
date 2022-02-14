@@ -27,12 +27,11 @@ export class QuerydisplayComponent implements OnInit {
   searchTerm(query: any) {
     
     this.newQuery = query;
-    this.userService.getUserDetails(this.newQuery.userQuery)
+    this.userService.getUserDetails(this.newQuery)
     this.userAccount = this.userService.userDetails;
     this.userProjects = this.userService.userReposArray;
     this.queryRepo = this.userService.searchReposArray;
     console.log(this.queryRepo)
-    this.isLoaded = !this.isLoaded;
     
   }
 

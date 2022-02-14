@@ -1,4 +1,4 @@
-<mat-progress-bar mode="indeterminate" color="accent" mode = "query" *ngIf="!myAccount && !myRepos"></mat-progress-bar>
+<mat-progress-bar mode="indeterminate" color="accent" mode="query" *ngIf="!myAccount && !myRepos"></mat-progress-bar>
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-4"></div>
@@ -24,20 +24,23 @@
     </div>
     <div class="col-md-4"></div>
   </div>
-  <h3 class="text-center fw-bolder fs-1">Repositories</h3>
+  <h3 class="text-center fw-bolder fs-1 text-decoration-underline mb-5">Repositories</h3>
   <div class="row row-cols-1 row-cols-md-3 g-3">
     <ng-container *ngFor="let repo of myRepos">
       <div class="col">
 
         <div class="card h-100 repo">
-          <h3 class="text-center fw-bold text-white text-uppercase mt-3">{{repo.repoName}}</h3>
+          <div class="card-header mb-3 head">
+            <h3 class="text-center fw-bold text-white text-uppercase mt-3">{{repo.repoName}}</h3>
+          </div>
           <h6 class="text-star ms-4 me-2">Description:{{repo.repoDescription}}</h6>
           <p class="text-start ms-4 me-2">Language:{{repo.language}}</p>
           <p class="text-start ms-4 me-2">Forks:{{repo.forks}}</p>
           <p class="text-start ms-4 me-2">Created:{{ repo.dateCreated | date }}</p>
           <p class="text-start ms-4 me-2">Last Updated:{{ repo.lastUpdated | update }}</p>
-          <div class="card-footer mt-auto text-center">
-            <a href={{repo.repoUrl}} target="_blank" class="text-center repolink fs-6 text-decoration-none text-white">View in
+          <div class="card-footer mt-auto text-center foot">
+            <a href={{repo.repoUrl}} target="_blank" class="text-center repolink fs-6 text-decoration-none fw-bold">View
+              in
               Github</a>
           </div>
 

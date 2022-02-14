@@ -1,5 +1,5 @@
 .profile{
-    background-color: rgb(15, 133, 74);
+    background-color: #0f854a;
 }
 
 .profile:hover{
@@ -30,6 +30,14 @@
     background-color: #5cebc0;
 }
 
-.repolink:hover{
-    color: #a30222;
+.repolink{
+    color: #ffff;
+}
+
+.head{
+    background-color: rgba(0, 0, 0, 0.192);
+}
+
+.foot:hover{
+    background-color: rgb(153, 240, 66);
 }

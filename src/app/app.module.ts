@@ -14,6 +14,7 @@ import { RepoformComponent } from './Components/repoform/repoform.component';
 import { DatePipe } from './Pipes/date.pipe';
 import { UpdatePipe } from './Pipes/update.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FooterComponent } from './Components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RepoformComponent,
     DatePipe,
     UpdatePipe,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

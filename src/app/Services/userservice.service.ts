@@ -25,15 +25,15 @@ export class UserserviceService {
 
     try {
 
-      const myResponse = await axios.get(`https://api.github.com/users/${urQuery}`,
+      const myResponse = await axios.get(`https://api.github.com/users/${urQuery.userQuery}`,
         {
           headers:
             { "Authorization": environment.access_token }
         })
 
-      const userRepoResponse = await axios.get(`https://api.github.com/users/${urQuery}/repos`);
+      const userRepoResponse = await axios.get(`https://api.github.com/users/${urQuery.userQuery}/repos`);
 
-      const repositories = await axios.get(`https://api.github.com/search/repositories?q=${urQuery}}`)
+      const repositories = await axios.get(`https://api.github.com/search/repositories?q=${urQuery.userQuery}}`)
 
       const profileData = myResponse.data;
       const repoData = userRepoResponse.data;
