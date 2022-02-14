@@ -27,5 +27,9 @@
 }
 
 .repo{
-    background-color: #7DC2AD;
+    background-color: #5cebc0;
+}
+
+.repolink:hover{
+    color: #a30222;
 }

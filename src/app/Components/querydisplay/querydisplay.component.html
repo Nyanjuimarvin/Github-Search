@@ -1,3 +1,4 @@
+<mat-progress-bar mode="indeterminate" color="accent" mode = "query" *ngIf="isLoaded"></mat-progress-bar>
 <div class="container-fluid">
 
   <app-queryform (query)="searchTerm($event)"></app-queryform>
@@ -12,9 +13,9 @@
           <div class="profileimg mx-auto mb-2 mt-3 p-1"> <img class="img-fluid " src={{userAccount.photoUrl}} alt="">
           </div>
           <div class="card-body">
-            <h3 class="card-title text-center mb-2">{{userAccount.userName}}</h3>
-            <h5 class="card-text text-center">{{userAccount.bioMessage}}</h5>
-            <p class="card-text text-center">{{userAccount.dateJoined}}</p>
+            <h3 class="card-title text-center mb-2 fw-bold">{{userAccount.userName}}</h3>
+            <h5 class="card-text text-center fs-4">{{userAccount.bioMessage}}</h5>
+            <p class="card-text text-center">Joined {{userAccount.dateJoined |date}}</p>
             <div class="text-center mb-5">
               <i class="fas fa-book me-2"></i>
               <span class="me-5">{{userAccount.repoNumber}}</span>
@@ -30,20 +31,22 @@
       </div>
       <div class="col-md-4"></div>
     </div>
-    <h3 class="text-center">Repositories</h3>
+    <h3 class="text-center mt-5 mb-3 fw-bolder text-decoration-underline">{{userAccount.userName}}'s Repositories</h3>
     <div class="row row-cols-1 row-cols-md-3 g-3">
       <ng-container *ngFor="let repo of userProjects">
         <div class="col" #repoResponse>
 
-          <div class="card h-100">
-            <h3 class="text-center">{{repo.repoName}}</h3>
-            <h6 class="text-start">{{repo.repoDescription}}</h6>
-            <p class="text-start ms-4">{{repo.language}}</p>
-            <p class="text-start">{{repo.forks}}</p>
-            <p class="text-start">{{repo.dateCreated}}</p>
-            <p class="text-start">{{repo.lastUpdated}}</p>
-            <a href={{repo.repoUrl}}>View in Github</a>
-
+          <div class="card repo h-100">
+            <h3 class="text-center fw-bold text-white text-uppercase">{{repo.repoName}}</h3>
+            <h6 class="text-start ms-4 me-2">Description:{{repo.repoDescription}}</h6>
+            <p class="text-start ms-4 me-2">Language:{{repo.language}}</p>
+            <p class="text-start ms-4 me-2">forks:{{repo.forks}}</p>
+            <p class="text-start ms-4 me-2">Created:{{repo.dateCreated | date}}</p>
+            <p class="text-start ms-4 me-2">Last updated:{{repo.lastUpdated | update}}</p>
+            <div class="card-footer mt-auto text-center">
+              <a href={{repo.repoUrl}} class="text-center repolink fs-6 text-decoration-none text-white">View in
+                Github</a>
+            </div>
           </div>
 
         </div>

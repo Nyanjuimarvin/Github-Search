@@ -13,6 +13,7 @@ export class RepoformComponent implements OnInit {
 
   repoRequest() {
     this.repoQuery.emit(this.repoSearch);
+    this.repoSearch = new Query("");
   }
 
   constructor() { }

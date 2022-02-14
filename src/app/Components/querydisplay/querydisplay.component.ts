@@ -22,6 +22,7 @@ export class QuerydisplayComponent implements OnInit {
   userProjects: Repos[] = [];
   queryRepo: Repos[] = [];
   newQuery!: Query;
+  isLoaded:boolean = false;
 
   searchTerm(query: any) {
     
@@ -31,6 +32,7 @@ export class QuerydisplayComponent implements OnInit {
     this.userProjects = this.userService.userReposArray;
     this.queryRepo = this.userService.searchReposArray;
     console.log(this.queryRepo)
+    this.isLoaded = !this.isLoaded;
     
   }
 

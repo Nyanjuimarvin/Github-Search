@@ -6,6 +6,7 @@ import { QuerydisplayComponent } from './Components/querydisplay/querydisplay.co
 
 
 const routes: Routes = [
+  {path: '', pathMatch: 'full', redirectTo: 'home'},
   {path:"home", component:LandingComponent},
   { path: "user", component: QuerydisplayComponent },
   { path: "repo", component: ReposearchComponent },

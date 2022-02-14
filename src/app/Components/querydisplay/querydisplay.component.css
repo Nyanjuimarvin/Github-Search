@@ -1,5 +1,13 @@
 .profile{
-    background-color: mintcream;
+    background-color: rgb(15, 133, 74);
+}
+
+.profile:hover{
+    transform:scale(1.1);
+    transform-style: preserve-3d;
+    transition-duration: 4s;
+    color: #ffff;
+    background-color: #a30222;
 }
 
 .profileimg{
@@ -16,4 +24,12 @@
 }
 .profilebtn{
     width: 100px;
+}
+
+.repo{
+    background-color: #5cebc0;
+}
+
+.repolink:hover{
+    color: #a30222;
 }

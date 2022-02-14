@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
+@import "~@angular/material/prebuilt-themes/purple-green.css";
+
 @font-face {
   font-family: "ITC Goudy Sans LT";
   src: url("//db.onlinewebfonts.com/t/c7e7deb0b79db60b0415420f53de7d97.eot");
@@ -24,3 +26,6 @@ body{
   background-image: url(./assets/Ngaruroro.png);
   background-attachment: fixed;
 }
+
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */

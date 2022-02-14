@@ -1,18 +1,23 @@
 <div class="container-fluid">
   <app-repoform (repoQuery)="getRandRepos($event)"></app-repoform>
 
+  <span *ngIf="reposArray.length > 0" class="mt-2 text-success fs-4">{{reposArray.length}} results</span>
+
   <div class="row row-cols-1 row-cols-md-3 g-3">
+
+    
     <ng-container *ngFor="let repo of reposArray">
       <div class="col" #repoResponse>
-
-        <div class="card h-100">
-          <h3 class="text-center">{{repo.repoName}}</h3>
-          <h6 class="text-start">{{repo.repoDescription}}</h6>
-          <p class="text-start ms-4">{{repo.language}}</p>
-          <p class="text-start">{{repo.forks}}</p>
-          <p class="text-start">{{repo.dateCreated}}</p>
-          <p class="text-start">{{repo.lastUpdated}}</p>
-          <a href={{repo.repoUrl}}>View in Github</a>
+        <div class="card repo h-100 mt-5">
+          <h3 class="text-center fw-bold text-white text-uppercase">{{repo.repoName}}</h3>
+          <h6 class="text-start ms-4 me-2">Description:{{repo.repoDescription}}</h6>
+          <p class="text-start ms-4 me-2 ms-4 me-2">Language:{{repo.language}}</p>
+          <p class="text-start ms-4 me-2">Forks:{{repo.forks}}</p>
+          <p class="text-start ms-4 me-2">Created:{{repo.dateCreated | date}}</p>
+          <p class="text-start ms-4 me-2">Last Updated:{{repo.lastUpdated | update}}</p>
+          <div class="card-footer mt-auto text-center">
+            <a href={{repo.repoUrl}} class="text-white text-decoration-none">View in Github</a>
+          </div>
 
         </div>
 
